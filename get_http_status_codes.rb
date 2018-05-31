@@ -5,6 +5,7 @@ require 'net/http/status'
 Net::HTTP::STATUS_CODES.each{|k,v| puts "#{k} ==> #{v}" }
 
 =begin
+  Output:
   100 ==> Continue
   101 ==> Switching Protocols
   102 ==> Processing
