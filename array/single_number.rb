@@ -8,11 +8,22 @@
 # Input: [4,1,2,1,2]
 # Output: 4
 
-def single_number(nums)
+
+# Solution 1
+def single_number_1(nums)
     return 0 if nums.empty?
     nums.group_by(&:itself).select do |k, v|
         k if v.size < 2 
     end.keys[0].to_i
 end
 
-puts single_number([2,2,1])
+
+# Solution 2
+def single_number_2(nums)
+    result = 0
+    nums.each {|n| result ^= n }
+    result
+end
+
+puts single_number_1([2,2,1])
+puts single_number_2([2,2,1])
