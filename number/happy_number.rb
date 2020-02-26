@@ -23,5 +23,15 @@ def is_happy_1?(n, sums = [])
     is_happy_1?(total, sums)
 end
 
+def is_happy_2?(n)
+  seen = []
+  while n != 1 && !seen.include?(n)
+    seen << n
+    n = n.to_s.chars.map(&:to_i).sum { |i| i**2 }
+  end
+  n == 1
+end
 
+
+puts is_happy_1?(19)
 puts is_happy_1?(19)
