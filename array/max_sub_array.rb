@@ -11,6 +11,7 @@
 # If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
 
+# Solution 1
 def max_sub_array_1(nums)
     return 0 if nums.empty?
     
@@ -23,4 +24,21 @@ def max_sub_array_1(nums)
     max
 end
 
+
+# Solution 2
+def max_sub_array_2(nums)
+    curr = 0
+    max = nums[0]
+    nums.each do |ele|
+        
+        curr += ele
+        max = curr if curr > max
+        curr = 0 if curr < 0
+    
+    end
+    return max
+    
+end
+
 puts max_sub_array_1([-2,1,-3,4,-1,2,1,-5,4])
+puts max_sub_array_2([-2,1,-3,4,-1,2,1,-5,4])
