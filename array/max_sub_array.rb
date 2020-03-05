@@ -37,8 +37,23 @@ def max_sub_array_2(nums)
     
     end
     return max
+end
+
+
+# Solution 3
+def max_sub_array_3(nums)
+    running_sum = nums[0]
+    max_sum = nums[0]
+    i = 1
+    while i < nums.length
+      running_sum = [nums[i], running_sum + nums[i]].max
+      max_sum = [max_sum, running_sum].max
+      i += 1
+    end    
     
+  max_sum
 end
 
 puts max_sub_array_1([-2,1,-3,4,-1,2,1,-5,4])
 puts max_sub_array_2([-2,1,-3,4,-1,2,1,-5,4])
+puts max_sub_array_3([-2,1,-3,4,-1,2,1,-5,4])
