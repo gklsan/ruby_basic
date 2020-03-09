@@ -21,5 +21,20 @@ def move_zeroes_1(nums)
     res
 end
 
+#Solution 2
+def move_zeroes_2(nums)
+    shift = 0
+    nums.each_with_index do |v,i|
+      if v == 0
+        shift += 1  
+      else
+        nums[i-shift] = v
+      end
+    end
+    shift.times {|i| nums[-(i+1)] = 0}
+    nums
+end
 
-move_zeroes_1([0,1,0,3,12])
+
+p move_zeroes_1([0,1,0,3,12])
+p move_zeroes_2([0,1,0,3,12])
