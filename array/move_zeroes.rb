@@ -35,6 +35,23 @@ def move_zeroes_2(nums)
     nums
 end
 
+# Solution 3
+def move_zeroes_3(nums)
+    index = 0
+    result = []
+    nums.each { |value| result << value if value != 0 }
+    return if result.size == nums.size
+    
+    nums.each_with_index do |value, index|
+       if index < result.size
+          nums[index] = result[index]
+       else
+           nums[index] = 0
+       end
+    end
+end
+
 
 p move_zeroes_1([0,1,0,3,12])
 p move_zeroes_2([0,1,0,3,12])
+p move_zeroes_3([0,1,0,3,12])
