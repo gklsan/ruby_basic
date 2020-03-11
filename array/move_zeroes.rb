@@ -51,7 +51,25 @@ def move_zeroes_3(nums)
     end
 end
 
+#Solution 4
+def move_zeroes_4(nums)
+    i = 0
+    current_length = nums.length - 1
+    while i < current_length
+        if nums[i] == 0
+            nums.push(0)
+            nums.delete_at(i)
+            current_length -= 1
+        else
+            i += 1
+        end
+    end
+    print(nums)
+end
+
 
 p move_zeroes_1([0,1,0,3,12])
 p move_zeroes_2([0,1,0,3,12])
 p move_zeroes_3([0,1,0,3,12])
+move_zeroes_4([0,1,0,3,12])
+
