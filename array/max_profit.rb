@@ -23,3 +23,15 @@
 # Output: 0
 # Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
+
+# Solution 1
+def max_profit_1(prices)
+  sum = 0
+  (1...prices.length).each do |i|
+    sum += [prices[i] - prices[i-1], 0].max
+  end
+  sum
+end
+
+
+p max_profit_1([7,1,5,3,6,4])
