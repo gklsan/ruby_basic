@@ -33,5 +33,21 @@ def max_profit_1(prices)
   sum
 end
 
+# Solution 2
+def max_profit_2(prices)
+  profit = 0
+  buy_value = prices.sum
+  
+  prices.each do |price|
+    if price < buy_value
+      buy_value = price
+    end
+    profit = profit + (price - buy_value)
+    buy_value = price
+  end
+  profit
+end
+
 
 p max_profit_1([7,1,5,3,6,4])
+p max_profit_2([7,1,5,3,6,4])
