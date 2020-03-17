@@ -49,5 +49,18 @@ def max_profit_2(prices)
 end
 
 
+# Solution 3
+def max_profit_3(prices)
+    max_profit = 0
+    prices.each_with_index do |price, i|
+        next if i==0
+        difference = price - prices[i-1]
+        max_profit += difference if difference > 0
+    end
+    max_profit
+end
+
+
 p max_profit_1([7,1,5,3,6,4])
 p max_profit_2([7,1,5,3,6,4])
+p max_profit_3([7,1,5,3,6,4])
