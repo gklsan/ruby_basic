@@ -60,7 +60,18 @@ def max_profit_3(prices)
     max_profit
 end
 
+# Solution 4
+def max_profit_4(prices)
+    diff = 0
+    price_size = prices.size
+    for i in (1...price_size.to_i)
+        diff += (prices[i] - prices[i-1]) if prices[i] > prices[i-1]
+    end
+    diff
+end
+
 
 p max_profit_1([7,1,5,3,6,4])
 p max_profit_2([7,1,5,3,6,4])
+p max_profit_3([7,1,5,3,6,4])
 p max_profit_3([7,1,5,3,6,4])
