@@ -14,11 +14,12 @@
 # All inputs will be in lowercase.
 # The order of your output does not matter.
 
-
-def group_anagrams(strs)
-    
+# Solution 1
+def group_anagrams_1(strs)
+	strs.group_by do |str|
+		str.downcase.chars.sort
+	end.values
 end
 
-
-puts group_anagrams ["eat", "tea", "tan", "ate", "nat", "bat"]
+puts group_anagrams_1 ["eat", "tea", "tan", "ate", "nat", "bat"]
 
