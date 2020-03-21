@@ -21,5 +21,18 @@ def group_anagrams_1(strs)
 	end.values
 end
 
-puts group_anagrams_1 ["eat", "tea", "tan", "ate", "nat", "bat"]
+# Solution 2
+def group_anagrams_2(strs)
+    anagrams = Hash.new
+    strs.each do |str|
+        anagram = str.chars.sort.join
+        anagrams[anagram] ||= []
+        anagrams[anagram] << str
+    end
+    anagrams.values
+end
+
+input = ["eat", "tea", "tan", "ate", "nat", "bat"]
+puts group_anagrams_1 input
+puts group_anagrams_2 input
 
