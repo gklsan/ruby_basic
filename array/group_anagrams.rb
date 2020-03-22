@@ -32,7 +32,18 @@ def group_anagrams_2(strs)
     anagrams.values
 end
 
+def group_anagrams_3(strs)
+    h = {}
+    strs.map do |str|
+        ana = str.chars.sort.join
+        h[ana].nil? ? h[ana] = [str] : h[ana] << str
+    end
+    h.values
+end
+
+
 input = ["eat", "tea", "tan", "ate", "nat", "bat"]
-puts group_anagrams_1 input
-puts group_anagrams_2 input
+p group_anagrams_1 input
+p group_anagrams_2 input
+p group_anagrams_3 input
 
