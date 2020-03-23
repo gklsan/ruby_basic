@@ -31,11 +31,16 @@
 # 1 <= arr.length <= 1000
 # 0 <= arr[i] <= 1000
 
-
-def count_elements_1(arr)
-	
+# Solution 1
+def count_elements(arr)
+    new_arr = (arr | [])
+    count = 0
+    arr.each do |ele|
+        count += 1 if new_arr.include?(ele+1)        
+    end
+    count
 end
 
-arr = [1,2,3]
-count_elements_1(arr)
+arr = [1,1,2,2]
+p count_elements_1(arr)
 
