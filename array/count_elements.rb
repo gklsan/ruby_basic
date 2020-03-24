@@ -42,5 +42,5 @@ def count_elements(arr)
 end
 
 arr = [1,1,2,2]
-p count_elements_1(arr)
+p count_elements(arr)
 
