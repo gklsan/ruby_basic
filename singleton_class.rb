@@ -1,6 +1,5 @@
 require 'singleton'
 
-
 class Config
   include Singleton
   
@@ -17,10 +16,8 @@ class Config
   end
 end
 
-
-
 c = Config.instance
-puts c.inspect
+# puts c.inspect
 
 c.store(1, 3)
 c.store(3, 4)
