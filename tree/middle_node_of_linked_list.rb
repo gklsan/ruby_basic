@@ -21,3 +21,27 @@
 # Note:
 
 # The number of nodes in the given list will be between 1 and 100.
+
+
+# Solution 1
+# Definition for singly-linked list.
+# class ListNode
+#     attr_accessor :val, :next
+#     def initialize(val)
+#         @val = val
+#         @next = nil
+#     end
+# end
+
+# @param {ListNode} head
+# @return {ListNode}  
+def middle_node(head)
+    elements = [head.val]
+    current_node = head
+    while current_node.next != nil
+        current_node = current_node.next
+        elements << current_node.val
+    end
+    middle_index = (elements.size / 2).round
+    elements[middle_index..-1]
+end
