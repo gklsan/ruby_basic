@@ -45,3 +45,15 @@ def middle_node(head)
     middle_index = (elements.size / 2).round
     elements[middle_index..-1]
 end
+
+
+# Solution 2
+def middle_node(head)
+    slow = head
+    fast = head
+    while (!fast.nil? && !fast.next.nil?)
+        slow = slow.next
+        fast = fast.next.next
+    end
+    slow
+end
