@@ -46,7 +46,6 @@ def middle_node(head)
     elements[middle_index..-1]
 end
 
-
 # Solution 2
 def middle_node(head)
     slow = head
@@ -56,4 +55,18 @@ def middle_node(head)
         fast = fast.next.next
     end
     slow
+end
+
+# Solution 3
+def middle_node(head)
+    return head if nil == head.next
+    mid = head
+    c = 1
+    loop do
+      break if !((head = head.next) && c += 1)
+      break if !((head = head.next) && c += 1)
+      
+      mid = mid.next
+    end
+    c.even? ? mid.next : mid
 end
