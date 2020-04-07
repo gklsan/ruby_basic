@@ -30,3 +30,20 @@
 # Follow up:
 
 # Can you solve it in O(N) time and O(1) space?
+
+# @param {String} s
+# @param {String} t
+# @return {Boolean}
+
+# Solution 1
+def clean_string(str)
+  str.each_char.with_object([]) {|x, y| x == '#' ? y.pop : (y << x)}.join 
+end
+
+def backspace_compare1(s, t)
+    clean_string(s) == clean_string(t)
+end
+
+
+p backspace_compare1("ab#c", "ad#c")
+
