@@ -45,5 +45,43 @@ def backspace_compare1(s, t)
 end
 
 
+# Solution 2
+
+def reduce(s, i)
+  skip = 0
+
+  loop do
+    if s[i] == '#'
+      skip += 1
+      i -= 1
+    elsif skip > 0
+      skip -= 1
+      i -= 1
+    else
+      return i
+    end
+  end
+end
+
+def backspace_compare2(s, t)
+  i, j = s.length - 1, t.length - 1
+
+  loop do
+    i = reduce(s, i)
+    j = reduce(t, j)
+    
+    return true if i < 0 && j < 0
+    
+    if s[i] != t[j]
+      return false
+    else
+      i -= 1
+      j -= 1
+    end
+  end
+end
+
+
 p backspace_compare1("ab#c", "ad#c")
+p backspace_compare2("ab#c", "ad#c")
 
