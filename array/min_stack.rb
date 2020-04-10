@@ -29,3 +29,59 @@
 # Constraints:
 
 # Methods pop, top and getMin operations will always be called on non-empty stacks.
+
+
+# Solution
+
+class MinStack
+    attr_accessor :bucket
+
+=begin
+    initialize your data structure here.
+=end
+    def initialize()
+        @bucket = []
+    end
+
+
+=begin
+    :type x: Integer
+    :rtype: Void
+=end
+    def push(x)
+        @bucket << x if x        
+    end
+
+
+=begin
+    :rtype: Void
+=end
+    def pop()
+        @bucket.pop        
+    end
+
+
+=begin
+    :rtype: Integer
+=end
+    def top()
+        @bucket.last
+    end
+
+
+=begin
+    :rtype: Integer
+=end
+    def get_min()
+        @bucket.min
+    end
+
+
+end
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack.new()
+# obj.push(x)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.get_min()
